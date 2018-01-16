@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HackerNews</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style>
+        body {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            -webkit-box-sizing: inherit;
+            -moz-box-sizing: inherit;
+            box-sizing: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .accordion-list {
+            font-family: 'Open Sans', sans-serif;
+            width: 60%;
+            padding: 0 10px;
+        }
+
+        .article-link {
+            text-decoration: none;
+            color: #666666;
+        }
+
+        .article-link:hover {
+            opacity: 0.5;
+        }
+
+        .date {
+            font-style: italic;
+            color: #cccccc;
+            font-size: 14px;
+             margin: 0;
+        }
+
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            transition: 0.4s;
+            text-transform: uppercase;
+        }
+
+        .article {
+            border-bottom: 2px solid #333333;
+            padding: 10px 0 10px 10px;
+        }
+
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .panel {
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+<ul class="accordion-list">
+    <li class="category">
+        <button class="accordion"> newstories</button>
+        <ul class="panel">
+            <li class="article">
+
+                Writed by: <cite class="writed-by">DoreenMichele</cite>
+                <p class="date">2018-01-16 02:48:31</p>
+                <h4 class="article-title">Washington state agency stops giving personal info to feds</h4>
+                <a href="http://www.seattlepi.com/news/article/Washington-won-t-release-driver-s-license-info-12498885.php" class="article-link">READ MORE</a>
+            </li>
+            <li class="article">
+
+                Writed by: <cite class="writed-by">rmoskal</cite>
+                <p class="date">2018-01-16 02:49:53</p>
+                <h4 class="article-title">Maybe We Should Keep Our Promises</h4>
+                <a href="https://medium.com/p/cb2f256f9c73/edit" class="article-link">READ MORE</a>
+            </li>
+            <li class="article">
+
+                Writed by: <cite class="writed-by">DoreenMichele</cite>
+                <p class="date">2018-01-16 02:51:49</p>
+                <h4 class="article-title">Chinese 'rainbow dinosaur' had iridescent feathers like hummingbirds</h4>
+                <a href="https://www.reuters.com/article/us-science-dinosaur/chinese-rainbow-dinosaur-had-iridescent-feathers-like-hummingbirds-idUSKBN1F415D" class="article-link">READ MORE</a>
+            </li>
+            <li class="article">
+
+                Writed by: <cite class="writed-by">cantrevealname</cite>
+                <p class="date">2018-01-16 02:54:00</p>
+                <h4 class="article-title">Kazakhstan Cheers New Alphabet, Except for All Those Apostrophes</h4>
+                <a href="https://www.nytimes.com/2018/01/15/world/asia/kazakhstan-alphabet-nursultan-nazarbayev.html" class="article-link">READ MORE</a>
+            </li>
+            <li class="article">
+
+                Writed by: <cite class="writed-by">endisukaj</cite>
+                <p class="date">2018-01-16 02:55:26</p>
+                <h4 class="article-title">Impatience: The Pitfall of Every Ambitious Person</h4>
+                <a href="http://dariusforoux.com/impatience/" class="article-link">READ MORE</a>
+            </li>
+            <li class="article">
+
+                Writed by: <cite class="writed-by">programd</cite>
+                <p class="date">2018-01-16 02:56:29</p>
+                <h4 class="article-title">Global Map of Antineutrino Emissions</h4>
+                <a href="http://www.ultralytics.com/agm2015" class="article-link">READ MORE</a>
+            </li>
+            <li class="article">
+
+                Writed by: <cite class="writed-by">justboxing</cite>
+                <p class="date">2018-01-16 02:57:19</p>
+                <h4 class="article-title">Goldman Sachs Report Explores Use of Bitcoin as Currency</h4>
+                <a href="https://iconow.net/goldman-sachs-report-explores-use-of-bitcoin-as-currency/" class="article-link">READ MORE</a>
+            </li>
+            <li class="article">
+
+                Writed by: <cite class="writed-by">fern12</cite>
+                <p class="date">2018-01-16 03:00:54</p>
+                <h4 class="article-title">Were the Cuban sonic attack victims actually poisoned?</h4>
+                <a href="https://www.thedailybeast.com/were-the-cuban-sonic-attack-victims-actually-poisoned?ref=wrap" class="article-link">READ MORE</a>
+            </li>
+            <li class="article">
+
+                Writed by: <cite class="writed-by">secfirstmd</cite>
+                <p class="date">2018-01-16 03:01:57</p>
+                <h4 class="article-title">Leaked: Using AI to change games during gameplay to force micro-transactions</h4>
+                <a href="https://www.reddit.com/r/The_Donald/comments/7qfp97/deadmans_switch_releases_piles_of_leaked/" class="article-link">READ MORE</a>
+            </li>
+            <li class="article">
+
+                Writed by: <cite class="writed-by">hw</cite>
+                <p class="date">2018-01-16 03:15:22</p>
+                <h4 class="article-title">Ethercraft: A Decentralized RPG on the Ethereum Blockchain</h4>
+                <a href="https://medium.com/@ethercraft/introducing-ethercraft-a-decentralized-rpg-running-on-the-ethereum-blockchain-3931bea40b3b" class="article-link">READ MORE</a>
+            </li>
+            </ul>
+    </li>
+    <li class="category">
+        <button class="accordion"> jobstories</button>
+        <ul class="panel">
+            <li class="article">
+
+                Writed by: <cite class="writed-by">bharath</cite>
+                <p class="date">2018-01-16 03:11:51</p>
+                <h4 class="article-title">Securly Hiring Full Stack Developer and DevOps in Charlotte, NC</h4>
+                <a href="https://boards.greenhouse.io/securly13#.Wl0IdZM-dTY" class="article-link">READ MORE</a>
+            </li>
+            </ul>
+    </li>
+    </ul>
+
+</body>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+</html>
