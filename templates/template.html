@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HackerNews</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style>
+        body {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            -webkit-box-sizing: inherit;
+            -moz-box-sizing: inherit;
+            box-sizing: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .accordion-list {
+            font-family: 'Open Sans', sans-serif;
+            width: 60%;
+            padding: 0 10px;
+        }
+
+        .article-link {
+            text-decoration: none;
+            color: #666666;
+        }
+
+        .article-link:hover {
+            opacity: 0.5;
+        }
+
+        .date {
+            font-style: italic;
+            color: #cccccc;
+            font-size: 14px;
+             margin: 0;
+        }
+
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            transition: 0.4s;
+            text-transform: uppercase;
+        }
+
+        .article {
+            border-bottom: 2px solid #333333;
+            padding: 10px 0 10px 10px;
+        }
+
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .panel {
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+<ul class="accordion-list">
+    {% for key, value in articles.items() -%}
+    <li class="category">
+        <button class="accordion"> {{key}}</button>
+        <ul class="panel">
+            {% for article in value -%}
+                <li class="article">
+                {% print(article.by) -%}
+                    Writed by: <cite class="writed-by">{{article.by}}</cite>
+                    <p class="date">{{article.time}}</p>
+                    <h4 class="article-title">{{article.title}}</h4>
+                    {% if article.text -%}
+                    <p class="article-text">{{article.text}}</p>
+                    {% endif -%}
+                    <a href='{{article.url}}' class="article-link">READ MORE</a>
+                </li>
+            {% endfor -%}
+        </ul>
+    </li>
+    {% endfor -%}
+</ul>
+
+</body>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+</html>
