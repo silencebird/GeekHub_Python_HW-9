@@ -154,7 +154,7 @@ if __name__ == "__main__":
     logger.write_log('info', 'Choose category {}'.format(args_parser.get_args(CATEGORIES)))
     logger.write_log('info', 'Get data from: {}{}.json'.format(REQUEST_URL_CATEGORY, args_parser.get_args(CATEGORIES)))
     categories = args_parser.get_args(CATEGORIES)
-    if not(type(categories) is list):
+    if not(type(categories) is tuple):
         categories = [categories]
     parser = Parser()
 
